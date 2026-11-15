@@ -2,11 +2,11 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Documentation · Cleartrip, planned together</title><link rel="stylesheet" href="style.css"></head>
 <body>
-<header class="top"><b>Cleartrip, planned together</b><nav><a href="index.html">Overview</a><a class="on" href="docs.html">Documentation</a><a href="prototype.html">Annotated prototype</a></nav></header>
+<header class="top"><b>Cleartrip, planned together</b><nav><a href="index.html">Overview</a><a class="on" href="docs.html">Documentation</a><a href="docs.html#09-plan-together">User flows</a><a href="prototype.html">Annotated prototype</a></nav></header>
 <nav class="toc" id="toc" aria-label="Sections"></nav>
 <main class="docs" id="docs"></main>
 <script>
-const S=[['00-cover','Cover'],['01-brief','The brief'],['02-personas','Who it is for'],['03-research','Research'],['04-patterns','Patterns to possibilities'],['05-landscape','The landscape'],['06-design-brief','Design brief'],['07-directions','Directions weighed'],['08-journey','The journey'],['09-setup','Setup and discovery'],['10-conversation','Conversation and transparency'],['11-review','Review and control'],['12-wishbox','Deciding together'],['13-approval','Approval and handoff'],['14-edge-cases','Edge cases'],['15-phone','On a phone'],['16-ai','How AI is used'],['17-decisions','Decisions and trade-offs'],['18-next','If there were more time'],['19-try','Try it']];
+const S=[['00-cover','Cover'],['01-brief','The brief'],['02-personas','Who it is for'],['03-research','Research'],['04-patterns','Patterns to possibilities'],['05-landscape','The landscape'],['06-design-brief','Design brief'],['07-directions','Directions weighed'],['08-journey','The journey'],['09-plan-together','Flow: Plan together'],['10-decide-together','Flow: Decide together'],['11-review-and-agree','Flow: Review and agree'],['12-when-things-go-wrong','Flow: When things go wrong'],['13-review-control','Review and control'],['14-ai','How AI is used'],['15-decisions','Decisions and trade-offs'],['16-next','If there were more time'],['17-try','Try it']];
 const d=document.getElementById('docs'),t=document.getElementById('toc');
 S.forEach(([f,n],i)=>{const im=new Image();im.src='docs/'+f+'.png';im.alt=n;im.id=f;im.loading=i<2?'eager':'lazy';im.width=1198;d.appendChild(im);const a=document.createElement('a');a.href='#'+f;a.dataset.t=n;a.textContent=n;t.appendChild(a);});
 </script></body></html>
