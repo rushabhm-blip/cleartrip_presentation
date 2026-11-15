@@ -143,13 +143,13 @@ class Stage {
     P('pointerup', ex, ey); this.cur.style.transition = ''; await this.wait(450, t); this.cur.classList.remove('show'); }
   clearPins() { this.pl.innerHTML = ''; this.gl.innerHTML = ''; this.gr.innerHTML = ''; this.ann.innerHTML = ''; }
   placePins(step) { this.clearPins(); const sr = this.stageEl.getBoundingClientRect(), vr = this.vp.getBoundingClientRect(); const ox = vr.left - sr.left, oy = vr.top - sr.top, W = this.vp.clientWidth, H = this.vp.clientHeight;
-    const items = []; step.pins.forEach(p => { const e = this.find(p[0]); if (!e) return; const r = this.rect(e); const side = this.mode === 'web' ? p[2] : p[2]; const ax = (side === 'l' ? r.x + Math.min(r.w, 40) * 0.2 : r.x + r.w - Math.min(r.w, 40) * 0.2); const px = Math.max(8, Math.min(this.vw - 8, ax)) * this.k, py = (r.y + r.h / 2) * this.k; if (r.y + r.h < 0 || r.y > this.vh) return; const pyc = Math.min(py, H - 12); items.push({ px, py: Math.max(8, pyc), label: p[1], side }); });
+    const items = []; step.pins.forEach(p => { const e = this.find(p[0]); if (!e) return; const r = this.rect(e); const side = this.mode === 'web' ? p[2] : p[2]; const ax = (side === 'l' ? r.x - 5 : r.x + r.w + 5); const px = Math.max(8, Math.min(this.vw - 8, ax)) * this.k, py = (r.y + r.h / 2) * this.k; if (r.y + r.h < 0 || r.y > this.vh) return; const pyc = Math.min(py, H - 12); items.push({ px, py: Math.max(8, pyc), label: p[1], side }); });
     if (this.mode === 'phone') items.forEach(it => { it.side = it.px < W / 2 ? 'l' : 'r'; }); else items.forEach(it => { it.side = it.px < W / 2 ? 'l' : 'r'; });
     items.forEach((it, n) => { it.n = n + 1; });
     const sides = { l: items.filter(i => i.side === 'l').sort((a, b) => a.py - b.py), r: items.filter(i => i.side === 'r').sort((a, b) => a.py - b.py) };
     ['l', 'r'].forEach(sd => { let last = -99; sides[sd].forEach(it => { it.ly = Math.max(it.py, last + 58); last = it.ly; }); });
     items.forEach((it, n) => { const delay = (REDUCED ? 0 : 160 * n);
-      const pin = document.createElement('div'); pin.className = 'pin'; pin.textContent = it.n; pin.style.left = it.px + 'px'; pin.style.top = it.py + 'px'; pin.style.animationDelay = delay + 'ms'; this.pl.appendChild(pin);
+      const pin = document.createElement('div'); pin.className = 'pin'; pin.style.left = it.px + 'px'; pin.style.top = it.py + 'px'; pin.style.animationDelay = delay + 'ms'; this.pl.appendChild(pin);
       const gut = it.side === 'l' ? this.gl : this.gr; const lab = document.createElement('div'); lab.className = 'lab ' + it.side; lab.innerHTML = `<b>${it.n}</b><span>${it.label}</span>`; lab.style.animationDelay = (delay + 150) + 'ms'; lab.style.top = (oy + it.ly - 10) + 'px';
       const dr = this.dev.getBoundingClientRect(); const gr = gut.getBoundingClientRect(); if (it.side === 'l') { lab.style.right = (gr.right - dr.left + 22 - 0) + 'px'; lab.style.right = '22px'; lab.style.left = 'auto'; } else { lab.style.left = '22px'; }
       gut.appendChild(lab);

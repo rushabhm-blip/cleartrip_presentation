@@ -48,8 +48,7 @@ a{color:inherit}
 .rip{position:absolute;width:34px;height:34px;margin:-17px 0 0 -17px;border-radius:50%;border:2px solid var(--orange);z-index:5;pointer-events:none;animation:rip .6s ease-out forwards}
 @keyframes rip{from{transform:scale(.3);opacity:1}to{transform:scale(1.5);opacity:0}}
 .pinl{position:absolute;left:0;top:0;z-index:4;pointer-events:none}
-.pin{position:absolute;width:24px;height:24px;margin:-12px 0 0 -12px;border-radius:50%;background:var(--pink);border:2px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.28);display:grid;place-items:center;font-size:11.5px;font-weight:700;transform:scale(0);animation:pop .45s cubic-bezier(.3,1.6,.5,1) forwards}
-.pin::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:2px solid var(--orange);opacity:0;animation:pulse 1.8s ease-out 0.5s infinite}
+.pin{position:absolute;width:9px;height:9px;margin:-4.5px 0 0 -4.5px;border-radius:50%;background:var(--ink);border:1.5px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.25);transform:scale(0);animation:pop .4s cubic-bezier(.3,1.6,.5,1) forwards}
 @keyframes pop{to{transform:scale(1)}}@keyframes pulse{0%{transform:scale(.7);opacity:.7}100%{transform:scale(1.5);opacity:0}}
 .ann{position:absolute;inset:0;pointer-events:none;overflow:visible;z-index:3}
 .ann path{fill:none;stroke:var(--ink);stroke-width:1;stroke-dasharray:var(--len);stroke-dashoffset:var(--len);animation:draw .6s ease forwards}
