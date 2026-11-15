@@ -71,5 +71,5 @@ a{color:inherit}
 .endnote .lk{margin-top:26px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
 .endnote .lk a{text-decoration:none;font-weight:600;padding:12px 22px;border-radius:99px;border:1.3px solid var(--ink)}.endnote .lk a.p{background:var(--ink);color:#fff}
 .endnote small{display:block;margin:40px 0 70px;color:var(--grey);line-height:1.6}
-@media(max-width:900px){.jh{padding:0 24px}.stage{grid-template-columns:1fr}.gut{display:none}.dev{margin:0 auto}.stagebox{margin:30px 12px 0}.top nav a{padding:6px 8px;font-size:12.5px}.top b{display:none}}
+@media(max-width:900px){.jh{padding:0 24px}.stage{grid-template-columns:1fr}.gut,.ann,.pinl{display:none}.dev{margin:0 auto}.stagebox{margin:30px 12px 0}.top nav a{padding:6px 8px;font-size:12.5px}.top b{display:none}}
 @media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.pin,.lab,.ann path{animation-duration:.01s}.pin::after{display:none}}
